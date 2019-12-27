@@ -221,7 +221,30 @@ export const asyncRoutes = [
       }
     ]
   },
-
+  {
+    path: '/hanhan',
+    component: Layout,
+    redirect: 'hanhan',
+    name: 'hanhan_test',
+    meta: {
+      title: 'hanhan_test',
+      icon: 'example'
+    },
+    children: [
+      {
+        path: 'han2',
+        component: () => import('@/views/hanhan/han2.vue'),
+        name: 'han2_test',
+        meta: { title: 'han2', noCache: true }
+      },
+      {
+        path: 'han3',
+        component: () => import('@/views/hanhan/han3.vue'),
+        name: 'han3_test',
+        meta: { title: 'han3', noCache: true }
+      }
+    ]
+  },
   {
     path: '/tab',
     component: Layout,
