@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from flask import Flask
+from flask import Flask,request
 
 from flask_cors import CORS
 import json
@@ -31,6 +31,10 @@ def model_get():
           'status': '已上线(小流量)',
           'version':'v3.0'
           }]
+  model_id = request.values.get('model_id')
+  print "model_id:",model_id
+  if model_id:
+    result = [result[int(model_id)]]
   return json.dumps(result)
 
 @app.route('/chart_get',methods = ['GET'])

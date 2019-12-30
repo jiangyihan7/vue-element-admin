@@ -1,12 +1,13 @@
 <template>
   <div>
-    <!--<el-select v-model="value" placeholder="请选择">
-      <el-option v-for="item in options"
-                 :key="item.value"
-                 :label="item.label"
-                 :value="item.value">
-      </el-option>
-    </el-select>-->
+    <el-select v-model="value" placeholder="请选择" @change="getTableData(value)">
+      <el-option
+        v-for="item in options"
+        :key="item.value"
+        :label="item.label"
+        :value="item.value"
+      />
+    </el-select>
     <el-table :data="tableData" style="width: 100%">
       <el-table-column label="版本id" width="180">
         <template slot-scope="scope">
@@ -53,18 +54,18 @@ import axios from 'axios'
 export default {
   data() {
     return {
-      // options: [{
-      //  value: '0',
-      //  label:'粗排-CTR-标准'
-      // }, {
-      //    value: '1',
-      //    label: '精排-CVR-非标'
-      //  }, {
-      //    value: '2',
-      //    label:'精排-CVR-标准'
-      //  }
-      // ],
-      // value: '',
+      options: [{
+        value: '0',
+        label: '粗排-CTR-标准'
+      }, {
+        value: '1',
+        label: '精排-CVR-非标'
+      }, {
+        value: '2',
+        label: '精排-CVR-标准'
+      }
+      ],
+      value: '',
       tableData: []
     }
   },
@@ -78,10 +79,14 @@ export default {
     handleDelete(index, row) {
       console.log(index, row)
     },
-    getTableData() {
+
+    getTableData(value) {
       axios({
         method: 'get',
-        url: 'http://localhost:5000/model_get'
+        url: 'http://localhost:5000/model_get',
+        params: {
+          model_id: this.value
+        }
       }).then((response) => {
         this.tableData = response.data
       }).catch(function(error) {
