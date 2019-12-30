@@ -81,10 +81,9 @@ export default {
     getTableData() {
       axios({
         method: 'get',
-        url: `http://localhost:5000/model_get`
+        url: 'http://localhost:5000/model_get'
       }).then((response) => {
         this.tableData = response.data
-        console.log(this.tableData)
       }).catch(function(error) {
         console.log(error)
       })

@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\plop-templates\\component",
+    "\\src",
+    "\\src\\components",
+    "\\src\\components\\Charts",
+    "\\src\\router",
+    "\\src\\views",
+    "\\src\\views\\charts",
+    "\\src\\views\\hanhan"
+  ],
+  "SelectedNode": "\\src\\components\\Charts\\LineMarker.vue",
+  "PreviewInSolutionExplorer": false
+}

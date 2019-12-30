@@ -8,7 +8,7 @@ app = Flask(__name__)
 cors = CORS(app)
 
 @app.route('/model_get',methods = ["GET"])
-def index():
+def model_get():
   result =  [{
           'id': '1',
           'name': '粗排-CTR-标准',
@@ -31,6 +31,14 @@ def index():
           'status': '已上线(小流量)',
           'version':'v3.0'
           }]
+  return json.dumps(result)
+
+@app.route('/chart_get',methods = ['GET'])
+def chart_get():
+  result = {}
+  result['title'] = 'ECharts - han2_test'
+  result['xAxis'] = ['啊', '喔', '额', '咦', '呜']
+  result['series'] = {'name':'han2','type': 'line','data': [5, 20, 36, 10, 10]}
   return json.dumps(result)
 
 if __name__ == '__main__':
