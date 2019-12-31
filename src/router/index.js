@@ -248,6 +248,12 @@ export const asyncRoutes = [
         component: () => import('@/views/hanhan/han3.vue'),
         name: 'han3_test',
         meta: { title: 'han3', noCache: true }
+      },
+      {
+        path: 'han4',
+        component: () => import('@/views/hanhan/han4.vue'),
+        name: 'han4_test',
+        meta: { title: 'han4', noCache: true }
       }
     ]
   },
