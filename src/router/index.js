@@ -232,6 +232,12 @@ export const asyncRoutes = [
     },
     children: [
       {
+        path: 'han1',
+        component: () => import('@/views/hanhan/han1.vue'),
+        name: 'han1_test',
+        meta: { title: 'han1', noCache: true }
+      },
+      {
         path: 'han2',
         component: () => import('@/views/hanhan/han2.vue'),
         name: 'han2_test',
