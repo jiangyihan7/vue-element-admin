@@ -11,6 +11,10 @@
     <div>
       <el-button @click="toggleFuc">Toggle Type</el-button>
     </div>
+    <div>
+      <el-radio v-model="checked1" label="1">xuan</el-radio>
+      <el-radio v-model="checked1" label="2">xu</el-radio>
+    </div>
   </div>
 </template>
 
@@ -18,6 +22,7 @@
 export default {
   data() {
     return {
+      checked1: '',
       input1: '',
       loginType: 'username'
     }

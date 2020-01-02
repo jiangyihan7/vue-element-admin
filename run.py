@@ -39,10 +39,14 @@ def model_get():
 
 @app.route('/chart_get',methods = ['GET'])
 def chart_get():
-  result = {}
-  result['title'] = 'ECharts - han2_test'
-  result['xAxis'] = ['啊', '喔', '额', '咦', '呜']
-  result['series'] = {'name':'han2','type': 'line','data': [5, 20, 36, 10, 10]}
+  result = [{},{}]
+  result[0]['title'] = 'ECharts - line'
+  result[0]['xAxis'] = ['啊', '喔', '额', '咦', '呜']
+  result[0]['series'] = {'name':'han6_line','type': 'line','data': [5, 20, 36, 10, 10]}
+  result[1]['title'] = 'ECharts - bar'
+  result[1]['xAxis'] = ['啊1', '喔1', '额1', '咦1', '呜1']
+  result[1]['series'] = {'name':'han6_bar','type': 'bar','data': [51, 201, 361, 10, 101]}
+  print result
   return json.dumps(result)
 
 if __name__ == '__main__':
