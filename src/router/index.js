@@ -250,6 +250,13 @@ export const asyncRoutes = [
         meta: { title: 'han3', noCache: true }
       },
       {
+        path: 'model_edit',
+        component: () => import('@/views/hanhan/han3_edit.vue'),
+        name: 'han3_edit',
+        meta: { title: 'han3_edit', noCache: true, activeMenu: '/hanhan/han3' },
+        hidden: true
+      },
+      {
         path: 'han4',
         component: () => import('@/views/hanhan/han4.vue'),
         name: 'han4_test',

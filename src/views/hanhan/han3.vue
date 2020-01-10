@@ -41,7 +41,9 @@
       </el-table-column>
       <el-table-column label="操作">
         <template slot-scope="scope">
-          <el-button size="mini" @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
+          <router-link :to="'/hanhan/model_edit?model_id='+scope.row.id">
+            <el-button size="mini">编辑</el-button>
+          </router-link>
           <el-button size="mini" type="danger" @click="handleDelete(scope.$index, scope.row)">删除</el-button>
         </template>
       </el-table-column>
@@ -73,9 +75,6 @@ export default {
     this.getTableData()
   },
   methods: {
-    handleEdit(index, row) {
-      console.log(index, row)
-    },
     handleDelete(index, row) {
       console.log(index, row)
     },
