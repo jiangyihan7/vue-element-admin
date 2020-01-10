@@ -76,7 +76,31 @@ export default {
   },
   methods: {
     handleDelete(index, row) {
-      console.log(index, row)
+      this.$confirm('确认删除该模型吗?', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).then(() => {
+        axios({
+          method: 'post',
+          url: 'http://localhost:5000/model_delete',
+          params: {
+            model_id: row - 1
+          }
+        }).then((response) => {
+          this.$message({
+            type: 'success',
+            message: '删除成功!'
+          })
+        }).catch(function(error) {
+          console.log(error)
+        })
+      }).catch(() => {
+        this.$message({
+          type: 'info',
+          message: '已取消删除'
+        })
+      })
     },
 
     getTableData(value) {

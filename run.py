@@ -46,8 +46,11 @@ def chart_get():
   result[1]['title'] = 'ECharts - bar'
   result[1]['xAxis'] = ['啊1', '喔1', '额1', '咦1', '呜1']
   result[1]['series'] = {'name':'han6_bar','type': 'bar','data': [51, 201, 361, 10, 101]}
-  print result
   return json.dumps(result)
 
+@app.route('/model_delete',methods = ['GET','POST'])
+def model_delete():
+  result = {'message':'success'}
+  return json.dumps(result)
 if __name__ == '__main__':
   app.run(debug=True)
